@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import produceSlice from "./produce";
+import cartSlice from "./cart"
 
 const store = configureStore({
     reducer: { // do we need to name this rootReducer?
-        produce: produceSlice
+        produce: produceSlice,
+        cart: cartSlice
     }
 });
 

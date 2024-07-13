@@ -1,18 +1,22 @@
 import CartItem from './CartItem';
+import { useSelector } from 'react-redux';
 import './Cart.css';
 
 function Cart() {
-  const cart = {};
-  const produce = {};
+  const cart = useSelector(state=> state.cart)
+  const produce = useSelector(state=> state.produce);
+  console.log(Array.isArray(produce))
 
-  const cartItems = Object.values(cart)
-    .map(item => {
+
+const cartItems = Object.values(cart)
+  .map(item => {
       return {
         ...item,
-        ...produce[item.id]
+        ...produce[item.id -1]
       };
     });
 
+console.log('cartItems',cartItems)
   if (!cartItems || !cartItems.length) return (
     <div className="cart">
       No items in the cart. Start selecting items to purchase.

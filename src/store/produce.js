@@ -6,9 +6,8 @@ const produceSlice = createSlice({
     name: 'populateProduce',
     initialState,
     reducers: {
-        populatedProduce(state, action) {
-            state = {...action.payload}
-        }
+        populatedProduce: (state, action) =>({...action.payload})
+        // populatedProduce: (state, action) => [{...action.payload[0]},...action.payload]
     }
 });
 
