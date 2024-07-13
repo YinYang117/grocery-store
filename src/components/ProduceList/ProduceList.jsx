@@ -10,7 +10,6 @@ function ProduceList() {
   const dispatch = useDispatch()
   const produce = useSelector(state=> state.produce)
   const produceArr = Object.values(produce)
-  console.log(produceArr)
   useEffect(()=> {
     dispatch(populatedProduce(produceData))
   }, [dispatch])
